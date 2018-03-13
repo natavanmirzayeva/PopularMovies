@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="top_rated_movies">Top Rated Movies</string>
+    <string name="title">Settings</string>
+    <string name="key">moviesType</string>
+    <string-array name="listArray">
+        <item>Popular Movies</item>
+        <item>Top Rated Movies</item>
+    </string-array>
+    <string-array name="listValues">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string name="popular">1</string>
+    <string name="top_rated">2</string>
+    <string name="error">Please check your internet connection</string>
+
+
+    <!-- Detail Screen -->
+    <string name="user_rating">User Rating: </string>
+    <string name="release_date">Release Date: </string>
+    <string name="plot_synopsis">Plot Synopsis: </string>
+</resources>

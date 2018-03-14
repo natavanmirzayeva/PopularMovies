@@ -7,6 +7,6 @@ package com.project.udacity.popularmovies;
 public class ApiVariables
 {
     static String moviePopular = "http://api.themoviedb.org/3/";
-    static String apiKey = ""; // write your apiKey here
+    static String apiKey = BuildConfig.API_KEY;
     public static String imagePath = "http://image.tmdb.org/t/p/w342//";
 }

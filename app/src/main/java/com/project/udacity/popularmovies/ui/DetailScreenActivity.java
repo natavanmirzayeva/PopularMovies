@@ -44,7 +44,7 @@ public class DetailScreenActivity extends AppCompatActivity
                 finish();
             }
         });
-        Movie movie = (Movie) intent.getSerializableExtra("movie");
+        Movie movie = intent.getParcelableExtra("movie");
         fillDetailScreen(movie);
     }
 

@@ -1,10 +1,12 @@
 package com.project.udacity.popularmovies;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.project.udacity.popularmovies.data.MoviesApi;
+import com.project.udacity.popularmovies.ui.DetailScreenActivity;
 import com.project.udacity.popularmovies.ui.MainActivity;
 
 import java.util.ArrayList;
@@ -54,7 +56,14 @@ public class JsonParse
             {
                 Log.d("Movies", response.body().getMovies().toString());
                 movies = response.body().getMovies();
-                recyclerView.setAdapter(new MoviesAdapter(movies, R.layout.movie_list_item,mainActivity.getApplicationContext()));
+                recyclerView.setAdapter(new MoviesAdapter(movies, R.layout.movie_list_item, mainActivity.getApplicationContext(), new MoviesAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Movie movie) {
+                        Intent intent = new Intent(mainActivity.getApplicationContext(),DetailScreenActivity.class);
+                        intent.putExtra("movie",movie);
+                        mainActivity.getApplicationContext().startActivity(intent);
+                    }
+                }));
             }
             @Override
             public void onFailure(Call<MovieResponse> call, Throwable t)

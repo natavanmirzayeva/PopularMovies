@@ -40,7 +40,7 @@ public class MovieList extends android.support.v4.app.Fragment implements Shared
         ButterKnife.bind(this,view);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
-        String control = sharedPreferences.getString(getResources().getString(R.string.key),null);
+        String control = sharedPreferences.getString(getResources().getString(R.string.key),"1");
         fillRecyclerView(control);
         return  view;
     }
@@ -48,7 +48,7 @@ public class MovieList extends android.support.v4.app.Fragment implements Shared
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
     {
-        String control = sharedPreferences.getString(key,null); // The content of Recycler View depends on the Settings screen,which will change due to shared preferences
+        String control = sharedPreferences.getString(key,"1"); // The content of Recycler View depends on the Settings screen,which will change due to shared preferences
         fillRecyclerView(control);
     }
 
